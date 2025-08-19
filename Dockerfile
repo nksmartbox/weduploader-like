@@ -8,10 +8,10 @@ COPY . .
 RUN corepack enable && corepack prepare pnpm@9.7.0 --activate
 
 # Install dependencies
-RUN pnpm-w install
+RUN pnpm install
 # Build client and server packages
-RUN pnpm --filter client run buildd
-RUN pnp --filter server run buildm
+RUN pnpm --filter client run build
+RUN pnpm --filter server run build
 # Production image
 FROM node:20-alpine
 WORKDIR /app
