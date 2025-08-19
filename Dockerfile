@@ -8,8 +8,8 @@ COPY . .
 RUN corepack enable && corepack prepare pnpm@9.7.0 --activate
 
 # Install dependencies
-RUN pnpm install
-# Build client and server packages
+RUN pnpm install --ignore-scripts
+# Build client and server packageserver packages
 RUN pnpm --filter client run build
 RUN pnpm --filter server run build
 # Production image
