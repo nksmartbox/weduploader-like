@@ -11,6 +11,9 @@ RUN corepack enable && corepack prepare pnpm@9.7.0 --activate
 RUN pnpm -w install
 RUN pnpm -w --filter client build
 
+
+
+
 # Production image
 FROM node:20-alpine
 WORKDIR /app
@@ -24,3 +27,4 @@ COPY --from=base /app/node_modules ./node_modules
 
 EXPOSE 8080
 CMD ["node", "server/dist/server.cjs"]
+
