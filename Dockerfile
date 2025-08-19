@@ -7,13 +7,11 @@ COPY . .
 # Install pnpm
 RUN corepack enable && corepack prepare pnpm@9.7.0 --activate
 
-# Install deps and build client
+# Install dependencies
 RUN pnpm -w install
-RUN pnpm --filter client build
-RUN pnpm --filter server build
-
-
-
+# Build client and server packages
+RUN pnpm --dir client run build
+RUN pnpm --dir server run build
 
 # Production image
 FROM node:20-alpine
@@ -28,4 +26,3 @@ COPY --from=base /app/node_modules ./node_modules
 
 EXPOSE 8080
 CMD ["node", "server/dist/server.cjs"]
-
