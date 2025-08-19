@@ -1,0 +1,22 @@
+{
+  "name": "weduploader-like-server",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "dist/server.cjs",
+  "scripts": {
+    "dev": "node --watch dist/server.cjs",
+    "build": "node ./tools/build.cjs",
+    "start": "node dist/server.cjs",
+    "postinstall": "node ./tools/build.cjs"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "multer": "^1.4.5-lts.1",
+    "rate-limiter-flexible": "^5.0.4",
+    "better-sqlite3": "^9.6.0",
+    "mime-types": "^2.1.35"
+  }
+}

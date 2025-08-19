@@ -1,0 +1,9 @@
+{
+  "name": "weduploader-like-monorepo",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "packageManager": "pnpm@9.7.0"
+}
