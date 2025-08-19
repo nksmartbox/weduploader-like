@@ -9,8 +9,8 @@ RUN corepack enable && corepack prepare pnpm@9.7.0 --activate
 
 # Install deps and build client
 RUN pnpm -w install
-RUN pnpm -w --filter client build
-RUN pnpm -w --filter server build
+RUN pnpm --filter client build
+RUN pnpm --filter server build
 
 
 
